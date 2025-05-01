@@ -1,0 +1,16 @@
+# set up two variables for com-com distance
+# drag this
+c1: CENTER ATOMS=protein_serial MASS
+
+c2: CENTER ATOMS=ligand_serial MASS
+
+d1: DISTANCE ATOMS=c1,c2
+# the movingrestraint
+restraint: ...
+        MOVINGRESTRAINT
+        ARG=d1
+        AT0=cal_d0 STEP0=0   KAPPA0=0
+        AT1=cal_d1 STEP1=step_size   KAPPA1=10000
+...
+# monitor the two variables and various restraint outputs
+PRINT STRIDE=stride_size ARG=* FILE=COLVAR
