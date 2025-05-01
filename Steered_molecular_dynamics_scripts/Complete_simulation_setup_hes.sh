@@ -7,8 +7,8 @@ Ncores=$3
 Account=$4
 Partition=$5
 
-input_dir="/home2/ananaya.jain/hes_input"
-script_dir="/home2/ananaya.jain/smd_scripts_2"
+input_dir="/path/to/prepared_inputs"
+script_dir="/path/to/smd_scripts"
 
 mkdir -p $input_dir/${index}.${pdbid}
 cp $script_dir/submit.sh $input_dir/${index}.${pdbid}/
