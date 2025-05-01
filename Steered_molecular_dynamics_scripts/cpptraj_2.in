@@ -1,0 +1,7 @@
+parm complex_solvated.prmtop
+trajin sim1.dcd
+strip :Na+,Cl-
+closest 2 :LIG first closestout closestmols.dat outprefix 2
+trajout 2.dcd offset 599
+run
+exit
