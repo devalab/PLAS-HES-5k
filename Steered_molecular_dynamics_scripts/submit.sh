@@ -15,10 +15,10 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-11.6/lib64
 eval "$(conda shell.bash hook)"
 conda activate plumed2
 
-script_dir="/home2/ananaya.jain/smd_scripts_2"
+script_dir="/path/to/smd_scripts"
 input_dir="/scratch"
-home_dir="/home2/ananaya.jain/hes_input"
-store_dir="/share6/ananaya.jain/hes_output"
+home_dir="/path/to_store/prepared_input"
+store_dir="/path/to_store/outputs"
 
 cp -r ${home_dir}/index.pdbid ${input_dir}/
 cd ${input_dir}/index.pdbid/ 
