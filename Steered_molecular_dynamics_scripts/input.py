@@ -12,11 +12,11 @@ import csv
 #index = sys.argv[-2]
 #pdbid = sys.argv[-1]
 
-ada_input_location='/share6/d4/plas20k_outputs'
-ada_user='d4@ada'
-password='DNR1s78s@'
+ada_input_location='/path/to/plas20k_outputs'
+ada_user='username@ada'
+password='password'
 input_path = '/scratch'
-scipt_dir = '/home2/ananaya.jain/smd_scripts_2'
+scipt_dir = '/path/to/smd_scripts'
 
 BASH = "/bin/bash" 
     
