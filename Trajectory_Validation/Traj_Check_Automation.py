@@ -13,78 +13,12 @@ from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
 
 
-# Variables
-username = 'Enter your username'
-ada_user='Ada_Username'
+
 absolute_path='Path/to/Trajectory_Validation_folder/'
-SERVICE_ACCOUNT_FILE = 'Path/to/Trajectory_Validation_folder/sheetsapitest-411019-1aeb483e9c72.json'
-#ada_input_location='/path/to/hes_output'
-# Linux users change the VMD startup commands below as well
-
-# Constants
-SPREADSHEET_ID = '-'
-SHEET_NAME = 'HES'
-SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-
 
 BASH = "/bin/bash"
 ZSH = "/bin/zsh"
 
-# Authenticate Google Sheets API
-credentials = Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
-service = build('sheets', 'v4', credentials=credentials)
-sheet = service.spreadsheets()
-
-# convert column index to letter
-def col_index_to_letter(index):
-    letter = ''
-    while index > 0:
-        index, remainder = divmod(index - 1, 26)
-        letter = chr(65 + remainder) + letter
-    return letter
-    
-# update the Google Sheet
-def update_sheet(pdb_id, run_number, status):
-    # D=4, E=5, F=6, G=7, H=8
-    column_letter = col_index_to_letter(run_number + 5)
-    sheet_range = f'{SHEET_NAME}!{column_letter}:{column_letter}'
-
-    result = sheet.values().get(spreadsheetId=SPREADSHEET_ID, range=SHEET_NAME).execute()
-    values = result.get('values', [])
-
-    # Find row with matching PDB ID and check username in the third column
-    row_index = next((i for i, row in enumerate(values) if row[1] == pdb_id and row[2] == username), None)
-    if row_index is not None:
-        update_range = f"{SHEET_NAME}!{column_letter}{row_index + 1}"
-        body = {'values': [[status]]}
-        request = sheet.values().update(spreadsheetId=SPREADSHEET_ID, range=update_range,
-                                        valueInputOption='USER_ENTERED', body=body)
-        response = request.execute()
-        print(f"Updated PDB ID {pdb_id} at run {run_number} with status '{status}' for user '{ada_user}'.")
-    else:
-        print(f"PDB ID {pdb_id} not found in the sheet for user '{ada_user}' or the username does not match.")
-
-
-#update IP column
-def update_ip(pdb_id, run_number, status):
-    # D=4, E=5, F=6, G=7, H=8
-    column_letter = col_index_to_letter(run_number + 10)
-    sheet_range = f'{SHEET_NAME}!{column_letter}:{column_letter}'
-
-    result = sheet.values().get(spreadsheetId=SPREADSHEET_ID, range=SHEET_NAME).execute()
-    values = result.get('values', [])
-
-    # Find row with matching PDB ID and check username in the third column
-    row_index = next((i for i, row in enumerate(values) if row[1] == pdb_id and row[2] == username), None)
-    if row_index is not None:
-        update_range = f"{SHEET_NAME}!{column_letter}{row_index + 1}"
-        body = {'values': [[status]]}
-        request = sheet.values().update(spreadsheetId=SPREADSHEET_ID, range=update_range,
-                                        valueInputOption='USER_ENTERED', body=body)
-        response = request.execute()
-        print(f"Updated PDB ID {pdb_id} at run {run_number} with status '{status}' for user '{ada_user}'.")
-    else:
-        print(f"PDB ID {pdb_id} not found in the sheet for user '{ada_user}' or the username does not match.")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run scripts")
@@ -147,12 +81,6 @@ if __name__ == "__main__":
                 command = f"""/usr/local/bin/vmd -e ../../state_1.vmd"""
                 subprocess.run(command, shell=True, check=True, executable=BASH)
                 
-                                # Prompt user for input
-                user_input = input(f"Is the initial I/P run {i} for PDB ID {pdbid} correct? (y/n): ").strip().lower().format(Fore.GREEN, input, Style.RESET_ALL)
-                status = 'Yes' if user_input == 'y' else 'No'
-                # Update Google Sheet
-                update_ip(pdbid, i, status)
-                
                 
                                                 #VMD Startup Command
                 command = f"""/usr/local/bin/vmd -e ../../state.vmd"""
@@ -164,14 +92,6 @@ if __name__ == "__main__":
                 command = f"""python Distance_Sigmoid_RMSD.py"""
                 subprocess.run(command, shell=True, check=True, executable=BASH)
                 
-                # Prompt user for input
-                user_input = input(f"Is the run {i} for PDB ID {pdbid} correct? (y/n): ").strip().lower().format(Fore.GREEN, input, Style.RESET_ALL)
-                status = 'Yes' if user_input == 'y' else 'No'
-                # Update Google Sheet
-                update_sheet(pdbid, i, status)
-                
 
             os.chdir(f"{absolute_path}")
             os.system('rm -rf {}.{}'.format(index,pdbid))
-
-
