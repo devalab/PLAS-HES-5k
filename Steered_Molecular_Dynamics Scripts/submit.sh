@@ -48,8 +48,6 @@ do
   cp ${input_dir}/index.pdbid/run${NRUN}/plum.dcd ${input_dir}/index.pdbid/Results/run${NRUN}
   cp ${input_dir}/index.pdbid/run${NRUN}/sim1_last.pdb ${input_dir}/index.pdbid/Results/run${NRUN}
   cd ${input_dir}/index.pdbid/Results/run${NRUN}/
-  cpptraj -i ../cpptraj_200.in >> mmpbsa_output
-  python  ../water_selection_no_skip.py -traj 200.dcd -top 200.complex_solvated.prmtop -nwater 2 -solvated_complex sim1_last.pdb >> mmpbsa_output
   mpirun -np ncores MMPBSA.py.MPI -O -i ../mmpbsa.in -rp ../protein.prmtop -lp ../ligand.prmtop -cp ../complex.prmtop -eo Interaction_energy.csv -y com*.dcd >> mmpbsa_output
   if [ -e "${input_dir}/index.pdbid/Results/run${NRUN}/FINAL_RESULTS_MMPBSA.dat" ]; then
       if grep -q 'DELTA TOTAL' "${input_dir}/index.pdbid/Results/run${NRUN}/FINAL_RESULTS_MMPBSA.dat"; then
