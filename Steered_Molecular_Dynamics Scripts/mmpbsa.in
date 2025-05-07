@@ -1,0 +1,6 @@
+&general
+startframe=1,  endframe=200, interval=1, verbose=2,  ligand_mask=:LIG  strip_mask=0, keep_files=0,
+/
+&pb
+  istrng=0.00, fillratio=4.0, inp=1, indi=4, radiopt=0,
+/
