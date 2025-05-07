@@ -12,8 +12,6 @@ from colorama import Fore, Style
 ada_input_location='/Path/to/hes_output/'
 password='enter password' 
 ada_user='Ada_username'
-#password='password' 
-#ada_user='-'
 absolute_path='/path/to/Trajectory_Validation_folder'
 
 
