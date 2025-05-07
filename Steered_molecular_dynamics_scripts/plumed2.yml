@@ -163,4 +163,4 @@ dependencies:
       - sander==22.0
       - threadpoolctl==3.2.0
       - tqdm==4.66.1
-prefix: /home2/ananya.priya/miniconda3/envs/plumed2
+prefix: /home/username/miniconda3/envs/plumed2
