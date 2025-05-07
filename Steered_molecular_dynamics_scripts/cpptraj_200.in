@@ -1,6 +1,0 @@
-parm ../complex_solvated.prmtop
-trajin plum.dcd
-strip :Na+,Cl-
-closest 200 :LIG first closestout closestmols.dat outprefix 200
-trajout 200.dcd offset 1
-run
