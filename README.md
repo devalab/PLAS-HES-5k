@@ -12,4 +12,4 @@ The command to submit jobs: sh Complete_simulation_setup_hs.sh "Index_Number" "P
 The codes to validate the vtrajectory in terms of sigmoidal curve fitting, RMSD of protein and ligand, center-of-mass distance separation, are provided in this folder.
 
 # File_Structure
-The file structure corresponding to each PDB ID, are generated with the corrsponding code. These will be displayed and ade public from the India-Data website, as mentioned in the manuscript.
+The file structure corresponding to each PDB ID, are generated with the corrsponding code. These will be displayed and made public from the India-Data website (https://india-data.org/dataset-version/ef3a1c5b-6ff2-49f7-ae7a-a99f69003849/69e2a8c6-d19f-4d62-be91-63baf17ae1e2), as mentioned in the manuscript.
