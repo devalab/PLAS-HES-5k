@@ -1,5 +1,5 @@
 # HES5K
-A dataset for the decoys of protein-ligand binding, useful for training machine learning models.
+A dataset for the decoys of protein-ligand binding, useful for training machine learning models in early stage drug discovery processes.
  
 # Environment for undertaking simulations
 The yml file corresponding to setting up the environments for undertaking simulations are present in the Env folder. Plumed2 is actiavted in conda environment.
