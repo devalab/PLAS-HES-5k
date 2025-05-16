@@ -12,15 +12,16 @@
     "name": "Prathit Chatterjee"
   },
   "license": {
-  "name": "Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International",
-  "shortName": "CC BY-NC-ND 4.0",
-  "url": "https://creativecommons.org/licenses/by-nc-nd/4.0/"
-},
+    "@type": "CreativeWork",
+    "name": "Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International",
+    "shortName": "CC BY-NC-ND 4.0",
+    "url": "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+  },
   "url": "https://india-data.org/dataset-details/ef3a1c5b-6ff2-49f7-ae7a-a99f69003849",
   "username": "prathit.biophysics@gmail.com",
   "password": "Prathitc@300717",
   "datePublished": "2025-05-14",
-  "version": "PLAS-HES-5k_V1.0",
+  "version": "1.0.0",
   "keywords": [
     "data-driven drug discovery",
     "protein-ligand complexes",
@@ -36,7 +37,8 @@
       "@type": "FileObject",
       "name": "PLAS-HES-5k_dataset",
       "contentUrl": "will be provided after the dataset is live",
-      "encodingFormat": "application/x-tar+gzip"
+      "encodingFormat": "application/x-tar+gzip",
+      "sha256": "not applicable"
     }
   ],
   "isPartOf": [
