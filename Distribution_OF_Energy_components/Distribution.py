@@ -251,7 +251,7 @@ def load_experimental_pdbs(csv_path):
     return experimental_pdbs
 
 def main():
-    base_dir = "/zfs/d4/HES/tmp_HES5K"
+    base_dir = "path_to_csv_directory"
     experimental_list_path = "experimental_pdb.csv"
     
     # Create output directories
