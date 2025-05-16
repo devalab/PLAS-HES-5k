@@ -1,0 +1,160 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "mlc": "https://ml-croissant.github.io/",
+    "sc": "https://schema.org/"
+  },
+  "@type": "Dataset",
+  "name": "PLAS-HES-5k",
+  "description": "PLAS-HES-5K is a curated collection of 5,000 protein-ligand complexes designed for machine learning applications in drug discovery. It includes both bound and unbound synthetic conformations, annotated with binding free energies, from non-equilibrium molecular dynamics simulations and approximate free energy calculations. With rich structural and energetic diversity, HES5K serves as a benchmark and training resource for predictive and generative ML/DL models aiming to improve drug-target binding predictions.",
+  "uploader": {
+    "@type": "Person",
+    "name": "Prathit Chatterjee"
+  },
+  "license": "Anyone for academic purpose can use the dataset, and after the corresponding manuscript is published, can cite the same in their publications. For non-commercial purposes, they can approach the authors or the corresponding author (deva@iiit.ac.in)",
+  "url": "https://example.com/hes5k",
+  "username": "hes5k_user",
+  "password": "securepassword123",
+  "datePublished": "2025-05-14",
+  "version": "1.0.0",
+  "keywords": [
+    "protein-ligand complexes",
+    "drug discovery",
+    "binding free energy",
+    "molecular dynamics",
+    "machine learning",
+    "deep learning"
+  ],
+  "citation": "Citation will be available after publication.",
+  "applicationCategory": "Data Driven Drug Discovery, Healthcare",
+  "distribution": [
+    {
+      "@type": "FileObject",
+      "name": "PLAS-HES-5k_dataset",
+      "contentUrl": "will be provided after the dataset is live",
+      "encodingFormat": "application/x-tar+gzip",
+      "sha256": "pending"
+    }
+  ],
+  "isPartOf": [
+    {
+      "@type": "Dataset",
+      "name": "protein-ligand-complexes",
+      "description": "Protein-ligand complexes with bound and unbound conformations, along with binding free energy calculations",
+      "applicationCategory": "Computational Chemistry",
+      "size": 5000,
+      "contentType": "multimodal",
+      "variableMeasured": [
+        {
+          "@type": "PropertyValue",
+          "name": "PDB_ID",
+          "description": "PDB identifier for the protein-ligand complex",
+          "valueType": "string"
+        }
+      ],
+      "distribution": [
+        {
+          "@type": "FileObject",
+          "name": "complex_structures",
+          "description": "Protein-ligand complex structures in PDB format",
+          "contentUrl": "/{index}.{pdbid}/HES/2.complex_solvated.pdb",
+          "encodingFormat": "chemical/x-pdb"
+        },
+        {
+          "@type": "FileObject",
+          "name": "complex_structures",
+          "description": "Protein-ligand complex structures in PDB format",
+          "contentUrl": "/{index}.{pdbid}/HES/complex_solvated.pdb",
+          "encodingFormat": "chemical/x-pdb"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "trajectory_pdbs",
+          "description": "Molecular dynamics trajectory snapshots in PDB format",
+          "contentUrl": "/{index}.{pdbid}/HES/run{run_num}/40_com_wat2_{pdbid}_run{run_num}.pdb",
+          "encodingFormat": "chemical/x-pdb"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "energy_data",
+          "description": "Interaction energy calculations for protein-ligand complexes across 40 frames, including Complex, Receptor, Ligand, and DELTA energy terms",
+          "contentUrl": "/{index}.{pdbid}/HES/run{run_num}/Interaction_energy.csv",
+          "encodingFormat": "text/csv",
+          "additionalProperty": {
+            "@type": "PropertyValue",
+            "name": "EnergyDataStructure",
+            "value": {
+              "sections": [
+                {
+                  "name": "Complex Energy Terms",
+                  "description": "Energy terms for the entire protein-ligand complex",
+                  "frameCount": 40,
+                  "energyTerms": ["BOND", "ANGLE", "DIHED", "UB", "IMP", "CMAP", "VDWAALS", "EEL", "1-4 VDW", "1-4 EEL", "EPB", "ENPOLAR", "EDISPER", "G gas", "G solv", "TOTAL"]
+                },
+                {
+                  "name": "Receptor Energy Terms",
+                  "description": "Energy terms for only the receptor (protein) component",
+                  "frameCount": 40,
+                  "energyTerms": ["BOND", "ANGLE", "DIHED", "UB", "IMP", "CMAP", "VDWAALS", "EEL", "1-4 VDW", "1-4 EEL", "EPB", "ENPOLAR", "EDISPER", "G gas", "G solv", "TOTAL"]
+                },
+                {
+                  "name": "Ligand Energy Terms",
+                  "description": "Energy terms for only the ligand component",
+                  "frameCount": 40,
+                  "energyTerms": ["BOND", "ANGLE", "DIHED", "UB", "IMP", "CMAP", "VDWAALS", "EEL", "1-4 VDW", "1-4 EEL", "EPB", "ENPOLAR", "EDISPER", "G gas", "G solv", "TOTAL"]
+                },
+                {
+                  "name": "DELTA Energy Terms",
+                  "description": "Difference energy terms between the complex and the sum of individual components",
+                  "frameCount": 40,
+                  "energyTerms": ["BOND", "ANGLE", "DIHED", "UB", "IMP", "CMAP", "VDWAALS", "EEL", "1-4 VDW", "1-4 EEL", "EPB", "ENPOLAR", "EDISPER", "DELTA G gas", "DELTA G solv", "DELTA TOTAL"]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "@type": "DataDownload",
+          "name": "topology_files",
+          "description": "Topology parameter files for molecular dynamics simulations",
+          "contentUrl": "/{index}.{pdbid}/HES/2.complex_solvated.prmtop",
+          "encodingFormat": "application/octet-stream"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "topology_files",
+          "description": "Topology parameter files for molecular dynamics simulations",
+          "contentUrl": "/{index}.{pdbid}/HES/complex_solvated.prmtop",
+          "encodingFormat": "application/octet-stream"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "bound_conformations",
+          "description": "Bound conformations of protein-ligand complexes",
+          "contentUrl": "/{index}.{pdbid}/PLAS/run{run_num}/expli_2wat_{run_num}.pdb",
+          "encodingFormat": "chemical/x-pdb"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "bound_energy_data",
+          "description": "Interaction energy calculations for bound conformations, following the same structure as the HES energy data",
+          "contentUrl": "/{index}.{pdbid}/PLAS/run{run_num}/Interaction_energy.csv",
+          "encodingFormat": "text/csv"
+        }
+      ]
+    }
+  ],
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Structure Information",
+      "value": "Each protein-ligand complex (PLC) in PLAS-HES-5K contains two versions:\n\n1. **PLAS**: Contains data corresponding to bound conformations.\n2. **HES**: Contains the unbound synthetic data starting from a chosen conformation from PLAS-20K, corresponding to each PLC. Unbound data contain both low energy and high energy conformations."
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Interaction Energy Data Format",
+      "value": "Key energy terms measured in the dataset:\n\n- **DELTA_TOTAL**: Overall binding free energy\n- **VDWAALS**: Van der Waals energy contribution\n- **EEL**: Electrostatic energy\n- **EPB**: Polar solvation energy\n- **ENPOLAR**: Non-polar solvation energy\n\nEnergy values are organized in four main sections in each Interaction_energy.csv file:\n1. **Complex Energy Terms**: Energy terms for the entire protein-ligand complex\n2. **Receptor Energy Terms**: Energy terms for only the receptor (protein) component\n3. **Ligand Energy Terms**: Energy terms for only the ligand component\n4. **DELTA Energy Terms**: Difference energy terms between the complex and the sum of individual components\n\nEach section contains measurements across 40 frames (0-39) with the following energy components: BOND, ANGLE, DIHED, UB, IMP, CMAP, VDWAALS, EEL, 1-4 VDW, 1-4 EEL, EPB, ENPOLAR, EDISPER, G gas/DELTA G gas, G solv/DELTA G solv, TOTAL/DELTA TOTAL."
+    }
+  ],
+  "usageInfo": "For training Machine Learning/Deep Learning (ML/DL) models for accurate prediction and generative performances with novel ML/DL architectures, developed from training with the current data."
+}
