@@ -103,9 +103,14 @@ If you use this dataset in your research, please cite:
 
 If you have any query regarding the dataset, you can reach out to Prathit Chatterjee (prathit.chatterjee@ihub-data.iiit.ac.in).
 
-### License
+## License
 
-*[License information to be provided by dataset creators: this should evidently include citing the dataset for all academic purposes, and to contact the authors for any commercial purpose]*
+This work is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](https://creativecommons.org/licenses/by-nc-nd/4.0/).
+
+[![CC BY-NC-ND 4.0][cc-by-nc-nd-image]][cc-by-nc-nd]
+
+[cc-by-nc-nd]: https://creativecommons.org/licenses/by-nc-nd/4.0/
+[cc-by-nc-nd-image]: https://licensebuttons.net/l/by-nc-nd/4.0/88x31.png
 
 ### Version
 
