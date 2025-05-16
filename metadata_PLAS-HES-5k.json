@@ -11,7 +11,11 @@
     "@type": "Person",
     "name": "Prathit Chatterjee"
   },
-  "license": "Anyone for academic purpose can use the dataset, and after the corresponding manuscript is published, can cite the same in their publications. For non-commercial purposes, they can approach the authors or the corresponding author (deva@iiit.ac.in)",
+  "license": {
+  "name": "Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International",
+  "shortName": "CC BY-NC-ND 4.0",
+  "url": "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+},
   "url": "https://india-data.org/dataset-details/ef3a1c5b-6ff2-49f7-ae7a-a99f69003849",
   "username": "prathit.biophysics@gmail.com",
   "password": "Prathitc@300717",
