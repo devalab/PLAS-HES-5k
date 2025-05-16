@@ -70,15 +70,18 @@ The PLAS-HES-5k dataset is designed for:
      The file structure corresponding to each PDB ID, are generated with the corrsponding code. These will be displayed and made public from the India-Data website ([https://india-data.org/dataset-details/ef3a1c5b-6ff2-49f7-ae7a-a99f69003849%22]), as mentioned in the manuscript.
      
    - Extract the `.tar.gz` archives to access individual PLC data
+     
+   - Distribution_Of_Energy_Components
+     For Reproducing the Distribution of Energy Components across PLC's and For Indiviual PLC's 
 
-2. **Training Models**
+1. **Training Models**
    - The dataset is suitable for various ML/DL approaches:
      - Graph Neural Networks
      - 3D Convolutional Networks
      - Equivariant Neural Networks
      - Attention-based models
 
-3. **Benchmarking**
+2. **Benchmarking**
    - Use the binding affinity data to evaluate model performance
    - Compare model predictions across both PLAS (bound) and HES (unbound) conformations
 
