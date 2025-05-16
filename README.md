@@ -114,5 +114,5 @@ This work is licensed under a [Creative Commons Attribution-NonCommercial-NoDeri
 
 ### Version
 
-PLAS-HES-5k_V1.0
+1.0.0
 
