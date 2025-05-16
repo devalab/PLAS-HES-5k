@@ -55,33 +55,42 @@ The PLAS-HES-5k dataset is designed for:
 
 ### Usage Instructions
 
-1. **Download the Dataset**
-   - Environment for undertaking simulations
-     The yml file corresponding to setting up the environments for undertaking simulations are present in the Env folder. Plumed2 is actiavted in conda environment.
+1. **Environment Setup**
+   - Environment configuration files for simulations are located in the `Env` folder
+   - A YAML file is provided for setting up the conda environment with Plumed2 activated
 
-   - Steered_Molecular_Dynamics Scripts
-     The scripts for running the simulations are provided in this folder. 
-     The command to submit jobs: sh Complete_simulation_setup_hs.sh "Index_Number" "PDB_ID" "cpu-number" "partition". 
+2. **Steered Molecular Dynamics**
+   - Simulation scripts are available in the `Steered_Molecular_Dynamics` folder
+   - Submit jobs using the command:
+     ```
+     sh Complete_simulation_setup_hs.sh "Index_Number" "PDB_ID" "cpu-number" "partition"
+     ```
 
-   - Trajectory_validation
-     The codes to validate the vtrajectory in terms of sigmoidal curve fitting, RMSD of protein and ligand, center-of-mass distance separation, are provided in this folder.
+3. **Trajectory Validation**
+   - The `Trajectory_validation` folder contains scripts to validate trajectories through:
+     - Sigmoidal curve fitting
+     - RMSD analysis of protein and ligand
+     - Center-of-mass distance separation measurements
 
-   - Dataset
-     The file structure corresponding to each PDB ID, are generated with the corrsponding code. These will be displayed and made public from the India-Data website ([https://india-data.org/dataset-details/ef3a1c5b-6ff2-49f7-ae7a-a99f69003849%22]), as mentioned in the manuscript.
-     
+4. **Dataset Access**
+   - File structures are generated for each PDB ID
+   - The complete dataset is publicly available on the India-Data website:
+     [https://india-data.org/dataset-details/ef3a1c5b-6ff2-49f7-ae7a-a99f69003849](https://india-data.org/dataset-details/ef3a1c5b-6ff2-49f7-ae7a-a99f69003849)
    - Extract the `.tar.gz` archives to access individual PLC data
-     
-   - Distribution_Of_Energy_Components
-     For Reproducing the Distribution of Energy Components across PLC's and For Indiviual PLC's 
 
-1. **Training Models**
+5. **Energy Component Analysis**
+   - The `Distribution_Of_Energy_Components` folder contains scripts for:
+     - Reproducing energy component distributions across all PLCs
+     - Analyzing energy components for individual PLCs
+
+6. **Training Machine Learning Models**
    - The dataset is suitable for various ML/DL approaches:
      - Graph Neural Networks
      - 3D Convolutional Networks
      - Equivariant Neural Networks
      - Attention-based models
 
-2. **Benchmarking**
+7. **Benchmarking**
    - Use the binding affinity data to evaluate model performance
    - Compare model predictions across both PLAS (bound) and HES (unbound) conformations
 
