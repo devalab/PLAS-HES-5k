@@ -93,6 +93,12 @@ The PLAS-HES-5k dataset is designed for:
 7. **Benchmarking**
    - Use the binding affinity data to evaluate model performance
    - Compare model predictions across both PLAS (bound) and HES (unbound) conformations
+   
+### Regression Model
+
+This repository also contains the OnionNet-2 binding affinity prediction model, whose code is adapted to a dataset of this size, while ensuring modernity in the dependencies used. The original code repository for the OnionNet-2 paper can be found: link. The OnionNet-2 paper can be found: link.
+
+To run the regression model, first install dependencies by creating a new environment with `conda env create -f env.yml`. Then, proceed to activate the `onion` environment and train the model with the dataset!
 
 ### Citation
 
