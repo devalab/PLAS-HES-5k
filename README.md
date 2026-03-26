@@ -96,7 +96,7 @@ The PLAS-HES-5k dataset is designed for:
    
 ### Regression Model
 
-This repository also contains the OnionNet-2 binding affinity prediction model, whose code is adapted to a dataset of this size, while ensuring modernity in the dependencies used. The original code repository for the OnionNet-2 paper can be found: link. The OnionNet-2 paper can be found: link.
+This repository also contains the OnionNet-2 binding affinity prediction model, whose code is adapted to a dataset of this size, while ensuring modernity in the dependencies used. The original code repository for the OnionNet-2 paper can be found here: https://github.com/zchwang/OnionNet-2. The OnionNet-2 paper can be found here: https://www.frontiersin.org/articles/10.3389/fchem.2021.753002/full.
 
 To run the regression model, first install dependencies by creating a new environment with `conda env create -f env.yml`. Then, proceed to activate the `onion` environment and train the model with the dataset!
 
