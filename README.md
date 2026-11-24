@@ -100,6 +100,8 @@ This repository also contains the OnionNet-2 binding affinity prediction model, 
 
 To run the regression model, first install dependencies by creating a new environment with `conda env create -f env.yml`. Then, proceed to activate the `onion` environment and train the model with the dataset!
 
+In addition, the split_OnionNet2.txt provides the details of each folds, with the enlisted PLCs corresponding to the folds. This has been particularly added to underscore no overlap in PLCs or its coordinates between the folds, while undertaking the 5-fold cross-validation with the modified OnionNet2 model. 
+
 ### Citation
 
 If you use this dataset in your research, please cite:
